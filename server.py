@@ -15,9 +15,13 @@ def hello_world():
    return render_template('home.html')
 
 
-@app.route('/learn/<id>')
-def hello_name(id=1):
-    return render_template('learn.html', id = id)
+@app.route('/learn/1')
+def hello_name():
+    return render_template('learn.html')
+
+@app.route('/learn/2')
+def second():
+   return render_template('learn2.html')
 
 
 
