@@ -1,11 +1,12 @@
 function display_player(x,y,num){
+    console.log(x)
     let newd = $("<div class='player_position'>")
-    newd.attr('left',x)
-    newd.attr("top",y)
+    newd.css('left',y)
+    newd.css("top",x)
     if (num=='0') {
-        newd.attr("background-color","white")
+        newd.css("background-color","white")
     } else {
-        newd.attr("background-color","red")
+        newd.css("background-color","red")
         newd.html(num)
     }
     $('#board').append(newd)
@@ -22,12 +23,16 @@ function update_player(data){
     })
 }
 
-$(function(){
-    update_player(data.positions)
-    $('#q_num').empty()
-    $('#q_num').html(data.id)
-    $('#action_name').empty()
-    $('#action_name').html(data.action)
-    $('#step_num').empty()
-    $('#step_num').html(data.step)
+$(document).ready(function(){
+    update_player(data.positions);
+    $('#q_num').empty();
+    $('#q_num').html(data.id);
+    $('#action_name').empty();
+    $('#action_name').html(data.action);
+    $('#step_num').empty();
+    $('#step_num').html(data.step);
+
+    $("#next").click(function(){
+        window.location.href = "/quiz/"+data.next;
+    })
 })

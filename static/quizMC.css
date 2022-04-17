@@ -1,0 +1,6 @@
+#container{margin:150px; padding-left: 50px;padding-right: 50px}
+#buttons{text-align: right}
+#question{font-weight: bold; margin:10px}
+input[type="radio"]{
+  margin: 0 10px 0 10px;
+}

@@ -1,0 +1,27 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+<!--    <script type="text/javascript" src="{{ url_for('static', filename = 'quizHome.js') }}"></script>-->
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename = 'quizHome.css') }}">
+
+    <script type="text/javascript">
+        let result = {{d|tojson}}
+        console.log(result)
+        $(document).ready(function () {
+            $('#res').html(result)
+        });
+    </script>
+
+</head>
+<body>
+    <div id="container">
+        <div>
+            <h1>Basketball Tactics</h1>
+            <div> score: <span id="res"></span> / 7</div>
+        </div>
+
+    </div>
+</body>
+</html>

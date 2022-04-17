@@ -1,0 +1,59 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<!--  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz1.js') }}"></script>
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename = 'quiz1.css') }}">
+
+    <script type="text/javascript">
+          let question = {{question|tojson}};
+          $(document).ready(function () {
+            $("#next_btn").click(function(){
+                window.location.href = "/quiz/{{question.next_question}}"
+            })
+          });
+    </script>
+
+</head>
+<body>
+    <div id="container">
+        <div id="question">{{question.quiz_id}}. Connect Numbers with the Positions</div>
+        <div class="row">
+            <div class="col-md-2" >
+                <div class="subtitle">Numbers</div>
+                <div class="number">1</div>
+                <div class="number">2</div>
+                <div class="number">3</div>
+                <div class="number">4</div>
+                <div class="number">5</div>
+            </div>
+            <div class="col-md-3" >
+                <div class="subtitle">Positions</div>
+                <div id="t1" class="target"></div>
+                <div id="t2" class="target"></div>
+                <div id="t3" class="target"></div>
+                <div id="t4" class="target"></div>
+                <div id="t5" class="target"></div>
+            </div>
+            <div class="col-md-2" >
+            </div>
+            <div class="col-md-5">
+                <div>
+                    <div>Drag these positions to the right numbers</div>
+                    <div id="options">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="buttons">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer()">Submit</button>
+            <button type="button" class="btn btn-primary" id="next_btn">Next</button>
+        </div>
+
+    </div>
+</body>
+</html>
