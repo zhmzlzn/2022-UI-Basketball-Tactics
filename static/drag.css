@@ -1,0 +1,21 @@
+.main{
+    text-align: center;
+}
+
+.nbtn{
+    border-style: solid;
+    text-align: center;
+    width: 70%;
+}
+
+#board{
+    contain: content;
+    width:500px;
+}
+
+.player_position{
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+}
