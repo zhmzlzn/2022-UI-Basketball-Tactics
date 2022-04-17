@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<script type="text/javascript" src="{{ url_for('static', filename = 'people.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
 <style>
     .basicTitle{
         font-size:40px;
@@ -21,6 +21,10 @@
     }
 
 </style>
+<script>
+    let subTitleData = {{subTitleData|tojson}}
+
+</script>
 <div class="container">
     <div class="basicTitle">Basic Knowledge</div>
 
@@ -29,15 +33,15 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-2">
-                <div class = "subBasicTitle">
-                    Basketball Court
+                <div class = "subBasicTitleLeft">
+
                 </div>
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-2"></div>
             <div class="col-md-2">
-                <div class = "subBasicTitle">
-                    Basketball Positions
+                <div class = "subBasicTitleRight">
+
                 </div>
             </div>
             <div class="col-md-2"></div>
