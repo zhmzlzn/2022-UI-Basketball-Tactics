@@ -3,7 +3,6 @@ from flask import render_template
 from flask import Response, request, jsonify
 app = Flask(__name__)
 
-
 drag_data= {
     '4':{
         'id':'4',
@@ -316,7 +315,6 @@ quiz_questions = {
 
 numCorrectAnswers = 0
 
-
 subTitleData = [
     {
         "id": 1,
@@ -327,6 +325,7 @@ subTitleData = [
         "name": "Basketball Positions"
     },
 ]
+
 titleData = [
                 {
                     "id": 1,
@@ -357,7 +356,7 @@ learn_tactic = {
     },
     "5": {
         "pre_link": "/learn/4",
-        "next_link": "/",
+        "next_link": "/quiz/home",
         "title": "Offense Tactic: Pistol Action",
         "description": "1 passes the ball to 2, then comes down to screen for the ball handler, 5 sets a screen near the free throw line, and then goes down. The 2 can make the most appropriate offensive choice based on the opponent's defense: he can drive the shot himself, or pass to a down center.",
         "video_link": "https://www.youtube.com/embed/I-cpRQxlBbo",
@@ -385,7 +384,6 @@ def learn_page(learn_id):
 def quizHome():
     return render_template('quizHome.html')
 
-
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
     global numCorrectAnswers
@@ -398,8 +396,6 @@ def quiz(quiz_id):
     elif int(quiz_id) < 9:
         return render_template('drag.html', d=drag_data[quiz_id])
     
-
-
 @app.route('/count', methods=['GET', 'POST'])
 def count():
     global numCorrectAnswers
