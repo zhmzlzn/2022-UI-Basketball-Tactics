@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'learn_offense.js') }}"></script>
+<style>
+    .basicTitle{
+        font-size:40px;
+        font-weight:30px;
+    }
+    .basicPicture{
+        width:500px;
+        height:300px;
+    }
+    .nextBtn{
+        width:160px;
+        height:50px;
+        position:relative;
+        left:750px;
+        top:50px;
+        background-color: white;
+    }
+    .backBtn{
+        width:160px;
+        height:50px;
+        position:relative;
+        left:50px;
+        top:50px;
+        background-color: white;
+    }
+
+</style>
+<script>
+    let tactic = {{tactic|tojson}}
+
+</script>
+<div class="container">
+    <div id="title" class="h2">{{tactic.title}}</div>
+    <div id="description">{{tactic.description}}</div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="Legend" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Tactic Board Legend</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <div>Passing</div>
+                <div>Running with ball</div>
+                <div>Running without ball</div>
+                <div>Screen</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6" >
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src='{{tactic.video_link}}' allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Legend">Legend</button>
+            <div id="board"></div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <button class = "backBtn" onclick="window.location.href = '{{tactic.pre_link}}'">Back</button>
+        <button class = "nextBtn" onclick="window.location.href = '{{tactic.next_link}}'">Next</button>
+    </div>
+</div>
+
+{% endblock %}
+
+
+

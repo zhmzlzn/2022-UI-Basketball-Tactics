@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script type="text/javascript" ></script>
+<style>
+.title{
+    font-weight:50px;
+    font-size:70px;
+    position:relative;
+    top:50px;
+    left:570px;
+}
+.mainPic{
+    width: 600px;
+    height: 400px;
+    transform:rotate(-22deg);
+    position:relative;
+    top:140px;
+    left:-50px;
+}
+.learnBtn{
+    background-color: #77FFCC;
+    width:160px;
+    height:50px;
+    position:relative;
+    top: 50px;
+    left:270px;
+}
+.quizBtn{
+    background-color: #FFFF77;
+    width:160px;
+    height:50px;
+    position:relative;
+    top: 150px;
+    left:105px;
+}
+</style>
+<script>
+
+</script>
+<div class = "container"></div>
+<h class = "title">Basketball Tactics</h>
+
+<img class = "mainPic" src = "./static/pic/img.png">
+
+<button class = "learnBtn" onclick="window.location.href = '/learn/1'">Learn</button>
+<button class = "quizBtn" onclick="window.location.href = '/quiz/home'">Quiz Yourself</button>
+
+{% endblock %}

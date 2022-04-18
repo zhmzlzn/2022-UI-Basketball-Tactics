@@ -1,23 +1,20 @@
-<html>
-<head>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" crossorigin="anonymous">
 
-    <script type="text/javascript" src="{{ url_for('static', filename = 'quizMC.js') }}"></script>
-    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename = 'quizMC.css') }}">
+{% extends "layout.html" %}
 
-    <script type="text/javascript">
-      let question = {{question|tojson}};
-      $(document).ready(function () {
-        $("#next_btn").click(function(){
-            window.location.href = "/quiz/{{question.next_question}}"
-        })
-      });
-    </script>
+{% block content %}
 
-</head>
-<body>
-    <div id="container">
+<script type="text/javascript" src="{{ url_for('static', filename = 'quizMC.js') }}"></script>
+<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename = 'quizMC.css') }}">
+
+<script type="text/javascript">
+  let question = {{question|tojson}};
+  $(document).ready(function () {
+    $("#next_btn").click(function(){
+        window.location.href = "/quiz/{{question.next_question}}"
+    })
+  });
+</script>
+
         <div id="question">{{question.quiz_id}}. {{question.question}}</div>
         <div class="row">
             <div class="col-md-8" >
@@ -32,6 +29,4 @@
             <button type="button" class="btn btn-primary" onclick="checkAnswer()">Submit</button>
             <button type="button" class="btn btn-primary" id="next_btn">Next</button>
         </div>
-    </div>
-</body>
-</html>
+{% endblock %}

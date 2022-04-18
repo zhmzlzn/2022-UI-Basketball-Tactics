@@ -1,24 +1,19 @@
-<html>
-<head>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-<!--  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" crossorigin="anonymous">
+{% extends "layout.html" %}
 
-    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz1.js') }}"></script>
-    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename = 'quiz1.css') }}">
+{% block content %}
 
-    <script type="text/javascript">
-          let question = {{question|tojson}};
-          $(document).ready(function () {
-            $("#next_btn").click(function(){
-                window.location.href = "/quiz/{{question.next_question}}"
-            })
-          });
-    </script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz1.js') }}"></script>
+<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename = 'quiz1.css') }}">
 
-</head>
-<body>
+<script type="text/javascript">
+        let question = {{question|tojson}};
+        $(document).ready(function () {
+        $("#next_btn").click(function(){
+            window.location.href = "/quiz/{{question.next_question}}"
+        })
+        });
+</script>
+
     <div id="container">
         <div id="question">{{question.quiz_id}}. Connect Numbers with the Positions</div>
         <div class="row">
@@ -55,5 +50,4 @@
         </div>
 
     </div>
-</body>
-</html>
+{% endblock %}
