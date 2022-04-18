@@ -31,7 +31,7 @@ learn_tactic = {
         "next_link": "/learn/4",
         "title": "Offense Tactic: Hammer Action",
         "description": "The essence of the 'hammer' action is that when the strong side (the side with the ball) cooperates with the ball, the weak side (the side without the ball) is also covering. Open weakside corners shoot 3-pointers.",
-        "video_link": "https://youtu.be/PwLQUsglKf4",
+        "video_link": "https://www.youtube.com/embed/PwLQUsglKf4",
         "image": "/static/pic/hammer_board.png"
     },
     "4": {
@@ -39,7 +39,7 @@ learn_tactic = {
         "next_link": "/learn/5",
         "title": "Offense Tactic: Horns Action",
         "description": "A half-court set in which two bigs set ball-screens on both sides of the ball-handler with one big rolling and the other popping.",
-        "video_link": "https://youtu.be/FD08YxtV4q8",
+        "video_link": "https://www.youtube.com/embed/FD08YxtV4q8",
         "image": "/static/pic/horns_board.png"
     },
     "5": {
@@ -47,7 +47,7 @@ learn_tactic = {
         "next_link": "/",
         "title": "Offense Tactic: Pistol Action",
         "description": "1 passes the ball to 2, then comes down to screen for the ball handler, 5 sets a screen near the free throw line, and then goes down. The 2 can make the most appropriate offensive choice based on the opponent's defense: he can drive the shot himself, or pass to a down center.",
-        "video_link": "https://youtu.be/I-cpRQxlBbo",
+        "video_link": "https://www.youtube.com/embed/I-cpRQxlBbo",
         "image": "/static/pic/pistol_board.png"
     }
 }
