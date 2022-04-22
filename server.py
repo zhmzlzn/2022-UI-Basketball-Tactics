@@ -8,7 +8,7 @@ drag_data= {
         'id':'4',
         'action':'horn',
         'step':'1/2',
-        'basketball': {'x':'270px','y':'255px'},
+        'basketball': '1',
         'next':'5',
         'positions':[
             {
@@ -84,7 +84,7 @@ drag_data= {
         'id':'5',
         'action':'horn',
         'step':'2/2',
-        'basketball': {'x':'270px','y':'255px'},
+        'basketball': '1',
         'next':'6',
         'positions':[
             {
@@ -130,20 +130,20 @@ drag_data= {
                 'correct':'0'
             },
             {
-                'x':'240px',
-                'y':'110px',
+                'y':'240px',
+                'x':'110px',
                 'num':'0',
                 'correct':'5'
             },
             {
-                'x':'320px',
-                'y':'200px',
+                'y':'320px',
+                'x':'200px',
                 'num':'0',
                 'correct':'1'
             },
             {
-                'x':'180px',
-                'y':'270px',
+                'y':'160px',
+                'x':'270px',
                 'num':'0',
                 'correct':'4'
             }
@@ -153,7 +153,7 @@ drag_data= {
         'id':'6',
         'action':'pistol',
         'step':'1/2',
-        'basketball': {'x':'270px','y':'255px'},
+        'basketball': '1',
         'next':'7',
         'positions':[
             {
@@ -205,16 +205,22 @@ drag_data= {
                 'correct':'5'
             },
             {
-                'y':'380px',
-                'x':'230px',
+                'y':'395px',
+                'x':'245px',
                 'num':'0',
                 'correct':'2'
             },
             {
-                'y':'360px',
-                'x':'210px',
+                'y':'370px',
+                'x':'220px',
                 'num':'0',
                 'correct':'1'
+            },
+            {
+                'y':'420px',
+                'x':'180px',
+                'num':'2',
+                'correct':'0'
             }
         ]
     },
@@ -222,7 +228,7 @@ drag_data= {
         'id':'7',
         'action':'pistol',
         'step':'2/2',
-        'basketball': {'x':'380px','y':'210px'},
+        'basketball': '2',
         'next':'end',
         'positions':[
             {
@@ -244,14 +250,14 @@ drag_data= {
                 'correct':'0'
             },
             {
-                'y':'380px',
-                'x':'230px',
+                'y':'395px',
+                'x':'245px',
                 'num':'2',
                 'correct':'0'
             },
             {
-                'y':'360px',
-                'x':'210px',
+                'y':'370px',
+                'x':'220px',
                 'num':'1',
                 'correct':'1'
             },

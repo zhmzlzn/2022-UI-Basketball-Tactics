@@ -7,7 +7,7 @@
 <script>
     let data = {{d|tojson}}
     let board_pic = `
-<img src="../static/board.jpeg" alt="" width="100%"> 
+<img src="../static/pic/board.jpeg" alt="" width="100%"> 
 `
     console.log(data)
 </script>
@@ -19,11 +19,14 @@
                 <div class="row">
                     <span>Step <span id="step_num">1/2</span> </span>
                 </div>
+                <div id="res">
+                    
+                </div>
             </div>
             <div class="col-6" >
                 <div id="board"> 
-                    <img src="../static/board.jpeg" alt="" width="100%"> 
-                    <div class="player_position"> </div>
+                    <img src="../static/pic/board.jpeg" alt="" width="100%"> 
+                    <!-- <div class="player_position"> </div> -->
                 
                 </div>
                 
