@@ -82,6 +82,10 @@ $(document).ready(function(){
     $('#step_num').empty();
     $('#step_num').html(data.step);
 
+    $("#restart").click(function(){
+        window.location.href = window.location.href;
+    })
+
     $("#next").click(function(){
         let r = false
         $.each(data.positions, function(i, z){
