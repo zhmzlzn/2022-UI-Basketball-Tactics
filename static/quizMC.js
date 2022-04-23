@@ -17,11 +17,13 @@ function initialize(){
     var answer = (document.querySelector('input[name=question'+quiz_id+']:checked')||{}).value;
     let userAnswer = {}
     if(answer===question.correctAnswer){
-        alert("Correct :)");
         userAnswer["answer"] = "true"
+        var success = $('<div class="alert alert-success" role="alert"><i class="bi bi-check" style="font-size: 1.3rem"></i>Correct!</div>')
+        $("#res").append(success)
     }else{
-        alert("Not Correct :(");
         userAnswer["answer"] = "false"
+        var fail = $('<div class="alert alert-danger" role="alert"><i class="bi bi-x" style="font-size: 1.3rem"></i>Incorrect</div>')
+        $("#res").append(fail)
     }
         $.ajax({
         type: "POST",
@@ -39,9 +41,14 @@ function initialize(){
             console.log(error)
         }
     });
+    setTimeout(function(){
+        window.location.href = "/quiz/"+ question.next_question
+    },1000);
   }
 
 $(document).ready(function () {
     initialize()
-
+    $("#review").click(function(){
+        window.location.href = "/review/" + question.quiz_id
+    })
 });

@@ -1,20 +1,40 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename = 'quizHome.css') }}">
+<script type="text/javascript" ></script>
+<style>
+.title{
+    font-weight:50px;
+    font-size:70px;
+    position:relative;
+    top:50px;
+    left:570px;
+}
+.mainPic{
+    width: 600px;
+    height: 400px;
+    transform:rotate(-22deg);
+    position:relative;
+    top:140px;
+    left:-50px;
+}
+.quizBtn{
+    background-color: #FFFF77;
+    width:160px;
+    height:50px;
+    position:relative;
+    top: 50px;
+    left:270px;
+}
+</style>
+<script>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-    $("#startQuiz").click(function(){
-        window.location.href = "/quiz/1"
-    })
-    });
 </script>
-    <div id="container">
-        <div>
-            <h1>Basketball Tactics</h1>
-            <button type="button" class="btn btn-primary" id="startQuiz">Quiz Now!</button>
-        </div>
+<div class = "container"></div>
+<h class = "title">Basketball Tactics</h>
 
-    </div>
+<img class = "mainPic" src = "/static/pic/img.png">
+
+<button class = "quizBtn" onclick="window.location.href = '/quiz/1'">Quiz Now!</button>
+
 {% endblock %}

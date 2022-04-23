@@ -1,10 +1,11 @@
-#container{margin:150px; padding-left: 50px;padding-right: 50px}
+#container{}
 .subtitle{height: 50px; background-color: lightgray;padding-left: 10px; padding-top: 10px;text-align: center}
-.number{height:50px;margin: 20px; border:solid;text-align: center; padding-top:10px}
-.target{height:50px;margin: 20px; border:solid;text-align: center; padding-top:10px;width:200px;}
+.number{height:50px;margin: 20px; text-align: center; padding-top:10px}
+.target{height:50px;margin: 20px; text-align: center; padding-top:10px;width:200px;}
 
 #options p:hover{background-color: lightblue;}
-#options{border:solid;width:150px; height: 200px; margin: 20px; }
+#options{width:150px;height: 280px; margin: 20px; }
 
 #buttons{text-align: right}
-#question{font-weight: bold; margin:10px}
+#question1{font-weight: bold; margin:10px}
+

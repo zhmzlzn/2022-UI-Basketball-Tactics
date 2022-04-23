@@ -17,7 +17,7 @@ var correct_answers = [
 function initialize(list){
     $("#options").empty()
     for (let i = 0; i <list.length; i++) {
-      var new1 = $("<p data-name='"+list[i]+"'></p>")
+      var new1 = $("<p data-name='"+list[i]+"' style='text-align: center;padding:5px;font-size:15px;' class='border border-secondary'></p>")
       $(new1).text(list[i])
       $("#options").append(new1)
     }
@@ -26,19 +26,20 @@ function initialize(list){
 function checkAnswer() {
     const targets = document.querySelectorAll('.target');
     let answers = new Array();
+
     targets.forEach(function (text) {
       answers.push(text.textContent);
       console.log(text.textContent)
     });
     let userAnswer = {}
     if (JSON.stringify(correct_answers) === JSON.stringify(answers)) {
-      alert("Correct :)");
       userAnswer["answer"] = "true"
+      var success = $('<div class="alert alert-success" style="width:200px;display: flex;align-items: center;" role="alert"><i class="bi bi-check" style="font-size: 1.3rem"></i>Correct!</div>')
+      $("#res").append(success)
     } else {
-      alert("Not Correct :(");
       userAnswer["answer"] = "false"
-      // console.log(JSON.stringify(correct_answers))
-      // console.log(JSON.stringify(answers))
+      var fail = $('<div class="alert alert-danger" style="width:200px;display: flex;align-items: center;" role="alert"><i class="bi bi-x" style="font-size: 1.3rem"></i>Incorrect</div>')
+      $("#res").append(fail)
     }
     $.ajax({
         type: "POST",
@@ -56,10 +57,19 @@ function checkAnswer() {
             console.log(error)
         }
     });
+    setTimeout(function(){
+        window.location.href = "/quiz/"+ question.next_question
+    },1000);
 }
 
 $(document).ready(function () {
-initialize(initial_pos);
+    initialize(initial_pos);
+    $("#restart").click(function(){
+        window.location.href = window.location.href;
+    })
+    $("#review").click(function(){
+        window.location.href = "/review/1"
+    })
 });
 
 $(function() {
