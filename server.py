@@ -297,24 +297,24 @@ quiz_questions = {
     "2": {
         "quiz_id": "2",
         "next_question": "3",
-        "question": "What kind of defense is shown in the video (2:00) below?",
+        "question": "What kind of defense is shown in the video below?",
         "answers": {
             "A": "Man-To-Man",
             "B": "Zone Defense"
         },
-        "link": "https://www.youtube.com/embed/Eozrxys3UUM",
+        "link": "/static/videos/p2.mp4",
         "correctAnswer": "B"
     },
     "3": {
         "quiz_id": "3",
         "next_question": "4",
-        "question": "Watch the video (0:15) and choose the correct tactic",
+        "question": "Watch the video and choose the correct tactic",
         "answers": {
             "A": "Horns",
             "B": "Pistol",
             "C": "Hammer"
         },
-        "link": "https://www.youtube.com/embed/w5ThyZ69GO8?start=4",
+        "link": "/static/videos/p3.mp4",
         "correctAnswer": "C"
         }
 }
@@ -401,7 +401,21 @@ def quiz(quiz_id):
         return render_template('quizMC.html', question=quiz_questions[quiz_id])
     elif int(quiz_id) < 9:
         return render_template('drag.html', d=drag_data[quiz_id])
-    
+
+
+@app.route('/review/<review_id>')
+def review(review_id):
+    if int(review_id) == 1:
+        return render_template('review1.html', subTitleData=subTitleData)
+    elif int(review_id) == 2:
+        return render_template('review2.html', titleData=titleData)
+    elif int(review_id) == 3:
+        return render_template('reviewOffense.html', tactic=learn_tactic["3"])
+    elif int(review_id) < 6:
+        return render_template('reviewOffense.html', tactic=learn_tactic["4"])
+    elif int(review_id) < 8:
+        return render_template('reviewOffense.html', tactic=learn_tactic["5"])
+
 @app.route('/count', methods=['GET', 'POST'])
 def count():
     global numCorrectAnswers

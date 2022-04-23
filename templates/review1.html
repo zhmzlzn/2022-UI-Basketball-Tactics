@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
+<style>
+    .basicTitle{
+        font-size:40px;
+        font-weight:30px;
+    }
+    .basicPicture{
+        width:500px;
+        height:300px;
+    }
+    .nextBtn{
+        width:160px;
+        height:50px;
+        position:relative;
+        left:900px;
+        top:50px;
+        background-color: white;
+    }
+
+</style>
+<script>
+    let subTitleData = {{subTitleData|tojson}}
+
+</script>
+<div class="container">
+    <div class="basicTitle">Basic Knowledge</div>
+
+    <div class="content">
+        <br>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <div class = "subBasicTitleLeft">
+
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <div class = "subBasicTitleRight">
+
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <img class = "basicPicture" src = "../static/pic/basicLeft.png"/>
+            </div>
+            <div class="col-md-6">
+                <img class = "basicPicture" src = "../static/pic/basicRight.png"/>
+            </div>
+        </div>
+        <div class="row">
+            <button class = "nextBtn" onclick="window.location.href = '/quiz/1'">Back to Question</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+

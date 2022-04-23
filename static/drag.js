@@ -86,6 +86,10 @@ $(document).ready(function(){
         window.location.href = window.location.href;
     })
 
+    $("#review").click(function(){
+        window.location.href = "/review/"+data.id;
+    })
+
     $("#next").click(function(){
         let r = false
         $.each(data.positions, function(i, z){
@@ -93,13 +97,32 @@ $(document).ready(function(){
                 r = true
             }
         })
+        let userAnswer = {}
         if (r) {
-            $("#res").html("wrong")
-            $("#res").css("background-color","red")
+            userAnswer["answer"] = "false"
+            var fail = $('<div class="alert alert-danger" style="display: flex;align-items: center;" role="alert"><i class="bi bi-x" style="font-size: 1.3rem"></i>Incorrect</div>')
+            $("#res").append(fail)
         } else {
-            $("#res").html("correct")
-            $("#res").css("background-color","green")
+            userAnswer["answer"] = "true"
+            var success = $('<div class="alert alert-success" style="display: flex;align-items: center;" role="alert"><i class="bi bi-check" style="font-size: 1.3rem"></i>Correct!</div>')
+            $("#res").append(success)
         }
+        $.ajax({
+            type: "POST",
+            url: "/count",
+            // dataType : "json",
+            contentType: "application/json; charset=utf-8",
+            data : JSON.stringify(userAnswer),
+            success: function(result){
+                console.log(userAnswer)
+            },
+            error: function(request, status, error){
+                console.log("Error");
+                console.log(request)
+                console.log(status)
+                console.log(error)
+            }
+        });
 
         setTimeout(function(){
             window.location.href = "/quiz/"+data.next;
