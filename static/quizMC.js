@@ -15,24 +15,26 @@ function initialize(){
   function checkAnswer() {
     var quiz_id = question.quiz_id
     var answer = (document.querySelector('input[name=question'+quiz_id+']:checked')||{}).value;
-    let userAnswer = {}
+    // let userAnswer = {}
     if(answer===question.correctAnswer){
-        userAnswer["answer"] = "true"
+        // userAnswer["answer"] = "true"
+        score += 1
         var success = $('<div class="alert alert-success" role="alert"><i class="bi bi-check" style="font-size: 1.3rem"></i>Correct!</div>')
         $("#res").append(success)
     }else{
-        userAnswer["answer"] = "false"
+        // userAnswer["answer"] = "false"
         var fail = $('<div class="alert alert-danger" role="alert"><i class="bi bi-x" style="font-size: 1.3rem"></i>Incorrect</div>')
         $("#res").append(fail)
     }
-        $.ajax({
+    let newScore = {"score":score}
+    $.ajax({
         type: "POST",
         url: "/count",
         // dataType : "json",
         contentType: "application/json; charset=utf-8",
-        data : JSON.stringify(userAnswer),
+        data : JSON.stringify(newScore),
         success: function(result){
-            console.log(userAnswer)
+            console.log(newScore)
         },
         error: function(request, status, error){
             console.log("Error");

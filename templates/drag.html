@@ -6,6 +6,7 @@
 <script type="text/javascript" src="{{ url_for('static', filename = 'drag.js') }}"></script>
 <script>
     let data = {{d|tojson}}
+    let score = {{score|tojson}}
     let board_pic = `
 <img src="../static/pic/board.jpeg" alt="" width="100%"> 
 `

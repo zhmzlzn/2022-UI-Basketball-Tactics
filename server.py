@@ -396,11 +396,11 @@ def quiz(quiz_id):
     if quiz_id == "end":
         return render_template('quizRes.html', d=numCorrectAnswers)
     if int(quiz_id) == 1:
-        return render_template('quiz1.html', question=quiz_questions[quiz_id])
+        return render_template('quiz1.html', question=quiz_questions[quiz_id], score=numCorrectAnswers)
     elif int(quiz_id) < 4:
-        return render_template('quizMC.html', question=quiz_questions[quiz_id])
+        return render_template('quizMC.html', question=quiz_questions[quiz_id], score=numCorrectAnswers)
     elif int(quiz_id) < 9:
-        return render_template('drag.html', d=drag_data[quiz_id])
+        return render_template('drag.html', d=drag_data[quiz_id], score=numCorrectAnswers)
 
 
 @app.route('/review/<review_id>')
@@ -420,9 +420,11 @@ def review(review_id):
 def count():
     global numCorrectAnswers
     json_data = request.get_json()
-    answer = json_data["answer"]
-    if answer == "true":
-        numCorrectAnswers += 1
+    # answer = json_data["answer"]
+    # if answer == "true":
+    #     numCorrectAnswers += 1
+    newScore = json_data["score"]
+    numCorrectAnswers = newScore
     print(numCorrectAnswers)
     return str(numCorrectAnswers)
 

@@ -97,24 +97,26 @@ $(document).ready(function(){
                 r = true
             }
         })
-        let userAnswer = {}
+        // let userAnswer = {}
         if (r) {
-            userAnswer["answer"] = "false"
+            // userAnswer["answer"] = "false"
             var fail = $('<div class="alert alert-danger" style="display: flex;align-items: center;" role="alert"><i class="bi bi-x" style="font-size: 1.3rem"></i>Incorrect</div>')
             $("#res").append(fail)
         } else {
-            userAnswer["answer"] = "true"
+            // userAnswer["answer"] = "true"
+            score += 1
             var success = $('<div class="alert alert-success" style="display: flex;align-items: center;" role="alert"><i class="bi bi-check" style="font-size: 1.3rem"></i>Correct!</div>')
             $("#res").append(success)
         }
+        let newScore = {"score": score}
         $.ajax({
             type: "POST",
             url: "/count",
             // dataType : "json",
             contentType: "application/json; charset=utf-8",
-            data : JSON.stringify(userAnswer),
+            data : JSON.stringify(newScore),
             success: function(result){
-                console.log(userAnswer)
+                console.log(newScore)
             },
             error: function(request, status, error){
                 console.log("Error");

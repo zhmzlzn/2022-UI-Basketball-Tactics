@@ -51,7 +51,28 @@
     console.log(result)
     $(document).ready(function () {
         $('#res').html(result)
+        $(".quizbtn").click(function(){
+            let newScore = {"score": 0}
+            $.ajax({
+                type: "POST",
+                url: "/count",
+                // dataType : "json",
+                contentType: "application/json; charset=utf-8",
+                data : JSON.stringify(newScore),
+                success: function(result){
+                    console.log(newScore)
+                },
+                error: function(request, status, error){
+                    console.log("Error");
+                    console.log(request)
+                    console.log(status)
+                    console.log(error)
+                }
+            });
+            window.location.href = '/quiz/home'
+        })
     });
+
 </script>
 
     <div class = "container"></div>
@@ -59,7 +80,7 @@
     <div class="result"> Your Score: <span id="res"></span> / 7</div>
     <img class = "mainPic" src = "/static/pic/img.png">
     <button class = "homebtn" onclick="window.location.href = '/'">Home Page</button>
-    <button class = "quizbtn" onclick="window.location.href = '/quiz/home'">Try Again</button>
+    <button class = "quizbtn">Try Again</button>
 
 
 {% endblock %}

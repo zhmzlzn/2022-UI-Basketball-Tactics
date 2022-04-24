@@ -31,24 +31,26 @@ function checkAnswer() {
       answers.push(text.textContent);
       console.log(text.textContent)
     });
-    let userAnswer = {}
+    // let userAnswer = {}
     if (JSON.stringify(correct_answers) === JSON.stringify(answers)) {
-      userAnswer["answer"] = "true"
+      // userAnswer["answer"] = "true"
+      score += 1
       var success = $('<div class="alert alert-success" style="width:200px;display: flex;align-items: center;" role="alert"><i class="bi bi-check" style="font-size: 1.3rem"></i>Correct!</div>')
       $("#res").append(success)
     } else {
-      userAnswer["answer"] = "false"
+      // userAnswer["answer"] = "false"
       var fail = $('<div class="alert alert-danger" style="width:200px;display: flex;align-items: center;" role="alert"><i class="bi bi-x" style="font-size: 1.3rem"></i>Incorrect</div>')
       $("#res").append(fail)
     }
+    let newScore = {"score":score}
     $.ajax({
         type: "POST",
         url: "/count",
         // dataType : "json",
         contentType: "application/json; charset=utf-8",
-        data : JSON.stringify(userAnswer),
+        data : JSON.stringify(newScore),
         success: function(result){
-            console.log(userAnswer)
+            console.log(newScore)
         },
         error: function(request, status, error){
             console.log("Error");
