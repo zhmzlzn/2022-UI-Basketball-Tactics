@@ -1,0 +1,39 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'quizMC.js') }}"></script>
+<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename = 'quizMC.css') }}">
+
+<script type="text/javascript">
+  let question = {{question|tojson}};
+  let score = {{score|tojson}};
+</script>
+
+        <div id="question">Q{{question.quiz_id}}. {{question.question}}</div>
+        <div class="row">
+            <div class="col-md-8" >
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src='{{question.link}}' allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div id="options"></div>
+                <div id="res"></div>
+            </div >
+            <div class="col-md-2">
+                <div class="row" style="height: 330px;">
+                </div>
+                <div class="row mt-2 nbtn center-block text-center" id="review">
+                    <button type="button" class="btn btn-outline-primary btn-block btn-sm">Ask For Help</button>
+                </div>
+                <div class="row mt-2 nbtn center-block text-center" id="next">
+                    <button type="button" class="btn btn-outline-primary btn-block btn-sm" onclick="checkAnswer()">Next Question</button>
+                </div>
+
+            </div>
+
+        </div>
+
+{% endblock %}

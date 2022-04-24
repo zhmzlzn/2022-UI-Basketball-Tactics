@@ -1,0 +1,11 @@
+#container{}
+.subtitle{height: 50px; background-color: lightgray;padding-left: 10px; padding-top: 10px;text-align: center}
+.number{height:50px;margin: 20px; text-align: center; padding-top:10px}
+.target{height:50px;margin: 20px; text-align: center; padding-top:10px;width:200px;}
+
+#options p:hover{background-color: lightblue;}
+#options{width:150px;height: 280px; margin: 20px; }
+
+#buttons{text-align: right}
+#question1{font-weight: bold; margin:10px}
+

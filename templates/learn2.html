@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'learn2.js') }}"></script>
+<style>
+    .basicTitle{
+        font-size:40px;
+        font-weight:30px;
+    }
+    .basicPicture{
+        width:500px;
+        height:300px;
+    }
+    .nextBtn{
+        width:160px;
+        height:50px;
+        position:relative;
+        left:750px;
+        top:0px;
+        background-color: white;
+    }
+    .backBtn{
+        width:160px;
+        height:50px;
+        position:relative;
+        left:50px;
+        top:0px;
+        background-color: white;
+    }
+    .basicPictureRight{
+        width:350px;
+        height:500px;
+    }
+    .picDes{
+        width:400px;
+        height:150px;
+    }
+    .desBtn{
+        position:relative;
+        left:500px;
+        top:-50px;
+    }
+</style>
+<script>
+    let titleData = {{titleData|tojson}}
+</script>
+<div class="container">
+    <div class="basicTitle">
+
+    </div>
+
+    <div class="content">
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <img class = "basicPicture" src = "../static/pic/defenseLeft.png"/>
+            </div>
+            <div class="col-md-6">
+                <img class = "basicPictureRight" src = "../static/pic/defenseRight.png"/>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-6">
+                <div id="board"></div>
+                <!-- Modal -->
+                <div class="modal fade" id="Description" tabindex="-1" role="dialog" aria-labelledby="DescriptionTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="DescriptionTitle">Detail Defense Description</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <div class = "detailMan"></div>
+                                <div class = "detailZoom"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <button type="button" class="desBtn btn btn-secondary" data-toggle="modal" data-target="#Description">
+                        Description
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button class = "backBtn" onclick="window.location.href = '/learn/1'">Back</button>
+            <button class = "nextBtn" onclick="window.location.href = '/learn/3'">Next Page</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+

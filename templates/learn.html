@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
+<style>
+    .basicTitle{
+        font-size:40px;
+        font-weight:30px;
+    }
+    .basicPicture{
+        width:500px;
+        height:300px;
+    }
+    .nextBtn{
+        width:160px;
+        height:50px;
+        position:relative;
+        left:900px;
+        top:-340px;
+        background-color: white;
+    }
+    .positionPicture_1{
+        width:90px;
+        height:120px;
+
+    }
+    .positionPicture_2{
+        width:90px;
+        height:120px;
+
+    }
+    .positionPicture_3{
+        width:100px;
+        height:130px;
+    }
+    .positionPicture_4{
+        width:90px;
+        height:120px;
+    }
+    .positionPicture_5{
+        width:90px;
+        height:120px;
+    }
+    .pos1{
+        position:relative;
+        left:50px;
+    }
+    .pos2{
+        position:relative;
+        top:-130px;
+        left:240px;
+    }
+    .pos3{
+        position:relative;
+        top:-300px;
+        left:430px;
+    }
+    .pos4{
+        position:relative;
+        top:-280px;
+        left:160px;
+    }
+    .pos5{
+        position:relative;
+        top:-420px;
+        left:360px;
+    }
+    .popPic{
+        width:200px;
+        height:90px;
+        position:relative;
+        top:-880px;
+        left:920px;
+    }
+</style>
+<script>
+    let subTitleData = {{subTitleData|tojson}}
+
+</script>
+<div class="container">
+    <div class="basicTitle">Basic Knowledge</div>
+
+    <div class="content">
+        <br>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <div class = "subBasicTitleLeft">
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <div class = "subBasicTitleRight">
+
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <img class = "basicPicture" src = "../static/pic/basicLeft.png"/>
+            </div>
+            <div class="col-md-6">
+                <div class="pos1">
+                <img class = "positionPicture_1" src = "../static/pic/Position_1.png"/><br>
+                <span>1 - Point Guard</span>
+                </div>
+                <div class="pos2">
+                <img class = "positionPicture_2" src = "../static/pic/Position_2.png"/><br>
+                <span>2 - Shooting Guard</span>
+                </div>
+                <div class="pos3">
+                <img class = "positionPicture_3" src = "../static/pic/Position_3.png"/><br>
+                <span>3 - Small Forward</span>
+                </div>
+                <div class="pos4">
+                <img class = "positionPicture_4" src = "../static/pic/Position_4.png"/><br>
+                <span>4 - Power Forward</span>
+                </div>
+                <div class="pos5">
+                <img class = "positionPicture_5" src = "../static/pic/Position_5.png"/><br>
+                    <span>5 - Center</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button class = "nextBtn" onclick="window.location.href = '/learn/2'">Next Page</button>
+        </div>
+        <img class = "popPic" src = "../static/pic/popPic.png"/>
+    </div>
+</div>
+
+{% endblock %}
+
+
+

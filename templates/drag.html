@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="../static/drag.css">
+<script type="text/javascript" src="{{ url_for('static', filename = 'drag.js') }}"></script>
+<script>
+    let data = {{d|tojson}}
+    let score = {{score|tojson}}
+    let board_pic = `
+<img src="../static/pic/board.jpeg" alt="" width="100%"> 
+`
+    console.log(data)
+</script>
+        <div class="row mt-4">
+            <span> Q<span id="q_num">4</span> : Drag the players to the correct positions of <span id="action_name" style="font-weight: bold; font-size: 15pt;"> horns </span> action. The white dots are optional drag targets. </span>
+        </div>
+        <div class="row main mt-4">
+            <div class="col-2">
+                <div class="row">
+                    <span>Step <span id="step_num">1/2</span> </span>
+                </div>
+                <div id="res" style="padding-top: 20px">
+
+                </div>
+            </div>
+            <div class="col-6" >
+                <div id="board"> 
+                    <img src="../static/pic/board.jpeg" alt="" width="100%"> 
+                    <!-- <div class="player_position"> </div> -->
+                
+                </div>
+                
+                
+            </div>
+            <div class="col-3">
+                <div class="row" style="height: 300px;">
+                </div>
+                <div class="row nbtn center-block text-center" id="restart">
+                    <button type="button" class="btn btn-outline-primary btn-block btn-sm">Restart</button>
+                </div>
+                <div class="row mt-2 nbtn center-block text-center" id="review">
+                    <button type="button" class="btn btn-outline-primary btn-block btn-sm">Ask For Help</button>
+                </div>
+                <div class="row mt-2 nbtn center-block text-center" id="next">
+                    <button type="button" class="btn btn-outline-primary btn-block btn-sm">Next Question</button>
+                </div>
+            </div>
+        </div>
+{% endblock %}
