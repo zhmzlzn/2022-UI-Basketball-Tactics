@@ -321,6 +321,7 @@ quiz_questions = {
 
 numCorrectAnswers = 0
 
+<<<<<<< HEAD
 subTitleData = {
     "1":{
         "id": 1,
@@ -345,6 +346,29 @@ titleData = {
     }
 }
 
+=======
+subTitleData = [
+    {
+        "id": 1,
+        "name": "Basketball Court"
+    },
+    {
+        "id": 2,
+        "name": "Basketball Positions"
+    },
+]
+
+titleData = [
+                {
+                    "id": 1,
+                    "name": "Basic Knowledge"
+                },
+                {
+                    "id": 2,
+                    "name": "Defense"
+                },
+           ]
+>>>>>>> cfa5b882f587aa4ddcbe5cd5227232a9bc2009ed
 
 learn_tactic = {
     "3": {
