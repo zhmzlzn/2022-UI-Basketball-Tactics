@@ -321,29 +321,30 @@ quiz_questions = {
 
 numCorrectAnswers = 0
 
-subTitleData = [
-    {
+subTitleData = {
+    "1":{
         "id": 1,
         "name": "Basketball Court"
     },
-    {
+    "2":{
         "id": 2,
         "name": "Basketball Positions"
     },
-]
+}
 
-titleData = [
-                {
-                    "id": 1,
-                    "name": "Basic Knowledge"
-                },
-                {
-                    "id": 2,
-                    "name": "Defense",
-                    "descriptionOne":"-The man-to-man defense involves all 5 defensive players on the court being allocated one opposition player who they’re accountable for defending whenever they’re on defense.",
-                    "descriptionTwo":"-Zone defense is a type of defense, used in team sports, which is the alternative to man-to-man defense; instead of each player guarding a corresponding player on the other team, each defensive player is given an area (a zone) to cover."
-                },
-           ]
+titleData = {
+    "1": {
+         "id": 1,
+         "name": "Basic Knowledge"
+    },
+    "2": {
+         "id": 2,
+         "name": "Defense",
+         "descriptionOne":"-The man-to-man defense involves all 5 defensive players on the court being allocated one opposition player who they’re accountable for defending whenever they’re on defense.",
+         "descriptionTwo":"-Zone defense is a type of defense, used in team sports, which is the alternative to man-to-man defense; instead of each player guarding a corresponding player on the other team, each defensive player is given an area (a zone) to cover."
+    }
+}
+
 
 learn_tactic = {
     "3": {
