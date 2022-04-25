@@ -37,15 +37,24 @@
     left:105px;
 }
 </style>
+
 <script>
-
 </script>
-<div class = "container"></div>
-<body background="../static/pic/background.png">
-<h class = "title">Basketball Tactics</h>
 
+<div class = "container">
+    <div class="row m-5"></div>
+    <body background="../static/pic/background.png">
+    <h1 class = "text-center text-white display-3 m-5">Basketball Tactics</h1>
 
-<button class = "learnBtn" onclick="window.location.href = '/learn/1'">Learn</button>
-<button class = "quizBtn" onclick="window.location.href = '/quiz/home'">Quiz Yourself</button>
+    <div class="row m-5 p-3"></div>
+    <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary btn-block mt-5" onclick="window.location.href = '/learn/1'">Learn</button><br>
+            <button type="button" class="btn btn-outline-primary mt-1 btn-block" onclick="window.location.href = '/quiz/home'">Quiz Yourself</button>
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+</div>
 
 {% endblock %}

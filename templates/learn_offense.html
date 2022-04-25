@@ -73,8 +73,13 @@
     </div>
     <br>
     <div class="row">
-        <button class = "backBtn" onclick="window.location.href = '{{tactic.pre_link}}'">Back</button>
-        <button class = "nextBtn" onclick="window.location.href = '{{tactic.next_link}}'">Next</button>
+        <div class="col-md-1">
+            <button type="button" class="btn btn-light btn-block" onclick="window.location.href = '{{tactic.pre_link}}'">Back</button>
+        </div>
+        <div class="col-md-10"></div>
+        <div class="col-md-1">
+            <button type="button" class="btn btn-light btn-block" onclick="window.location.href = '{{tactic.next_link}}'">Next</button>
+        </div>
     </div>
 </div>
 
