@@ -7,9 +7,11 @@
     font-weight:50px;
     font-size:70px;
     position:relative;
-    top:50px;
-    left:570px;
+    top:70px;
+    left:370px;
+    color:white;
 }
+
 .mainPic{
     width: 600px;
     height: 400px;
@@ -18,23 +20,40 @@
     top:140px;
     left:-50px;
 }
-.quizBtn{
-    background-color: #FFFF77;
+.learnBtn{
+    background-color: #0066FF;
     width:160px;
     height:50px;
     position:relative;
-    top: 50px;
+    top: 350px;
     left:270px;
 }
+.quizBtn{
+    background-color: #BBBB00;
+    width:160px;
+    height:50px;
+    position:relative;
+    top: 450px;
+    left:105px;
+}
 </style>
+
 <script>
-
 </script>
-<div class = "container"></div>
-<h class = "title">Basketball Tactics</h>
 
-<img class = "mainPic" src = "/static/pic/img.png">
+<div class = "container">
+    <div class="row m-5"></div>
+    <body background="../static/pic/background.png"></body>
+    <h1 class = "text-center text-white display-3 m-5">Basketball Tactics</h1>
 
-<button class = "quizBtn" onclick="window.location.href = '/quiz/1'">Quiz Now!</button>
+    <div class="row m-5 p-3"></div>
+    <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary mt-1 btn-block" onclick="window.location.href = '/quiz/1'">Quiz Yourself</button>
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+</div>
 
 {% endblock %}
