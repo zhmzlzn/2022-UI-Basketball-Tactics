@@ -320,6 +320,7 @@ quiz_questions = {
 }
 
 numCorrectAnswers = 0
+scores = [None]*7
 
 subTitleData = {
     "1":{
@@ -413,22 +414,49 @@ def review(review_id):
     elif int(review_id) == 2:
         return render_template('review2.html', titleData=titleData)
     elif int(review_id) == 3:
-        return render_template('reviewOffense.html', tactic=learn_tactic["3"])
-    elif int(review_id) < 6:
-        return render_template('reviewOffense.html', tactic=learn_tactic["4"])
-    elif int(review_id) < 8:
-        return render_template('reviewOffense.html', tactic=learn_tactic["5"])
+        return render_template('review3.html', tactic=learn_tactic["3"])
+    elif int(review_id) == 4:
+        return render_template('review4.html', tactic=learn_tactic["4"])
+    elif int(review_id) == 5:
+        return render_template('review5.html', tactic=learn_tactic["4"])
+    elif int(review_id) == 6:
+        return render_template('review6.html', tactic=learn_tactic["5"])
+    elif int(review_id) == 7:
+        return render_template('review7.html', tactic=learn_tactic["5"])
 
 @app.route('/count', methods=['GET', 'POST'])
 def count():
     global numCorrectAnswers
+    global scores
     json_data = request.get_json()
     # answer = json_data["answer"]
     # if answer == "true":
     #     numCorrectAnswers += 1
-    newScore = json_data["score"]
-    numCorrectAnswers = newScore
+    
+    score = int(json_data["score"])
+    id = int(json_data["quiz_id"])-1
+
+    # -1: give up, 0: incorrect, 1: correct
+    if score == -1:
+        scores[id] = score
+    else:
+        if scores[id] != -1:
+            scores[id] = score
+            numCorrectAnswers += score
+    print(scores)
     print(numCorrectAnswers)
+    return str(numCorrectAnswers)
+
+
+@app.route('/reset', methods=['GET', 'POST'])
+def reset():
+    global numCorrectAnswers
+    global scores
+    json_data = request.get_json()
+    score = json_data["score"]
+    print(score)
+    numCorrectAnswers = 0
+    scores = [None]*7
     return str(numCorrectAnswers)
 
 

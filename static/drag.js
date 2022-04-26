@@ -87,6 +87,25 @@ $(document).ready(function(){
     })
 
     $("#review").click(function(){
+        let userAnswer = {}
+        userAnswer["quiz_id"] = data.id
+        userAnswer["score"] = -1
+        $.ajax({
+            type: "POST",
+            url: "/count",
+            // dataType : "json",
+            contentType: "application/json; charset=utf-8",
+            data : JSON.stringify(userAnswer),
+            success: function(result){
+                console.log(userAnswer)
+            },
+            error: function(request, status, error){
+                console.log("Error");
+                console.log(request)
+                console.log(status)
+                console.log(error)
+            }
+        });
         window.location.href = "/review/"+data.id;
     })
 
@@ -97,26 +116,27 @@ $(document).ready(function(){
                 r = true
             }
         })
-        // let userAnswer = {}
+        let userAnswer = {}
+        userAnswer["quiz_id"] = data.id
         if (r) {
-            // userAnswer["answer"] = "false"
+            userAnswer["score"] = 0
             var fail = $('<div class="alert alert-danger" style="display: flex;align-items: center;" role="alert"><i class="bi bi-x" style="font-size: 1.3rem"></i>Incorrect</div>')
             $("#res").append(fail)
         } else {
-            // userAnswer["answer"] = "true"
-            score += 1
+            userAnswer["score"] = 1
+            // score += 1
             var success = $('<div class="alert alert-success" style="display: flex;align-items: center;" role="alert"><i class="bi bi-check" style="font-size: 1.3rem"></i>Correct!</div>')
             $("#res").append(success)
         }
-        let newScore = {"score": score}
+        // let newScore = {"score": score}
         $.ajax({
             type: "POST",
             url: "/count",
             // dataType : "json",
             contentType: "application/json; charset=utf-8",
-            data : JSON.stringify(newScore),
+            data : JSON.stringify(userAnswer),
             success: function(result){
-                console.log(newScore)
+                console.log(userAnswer)
             },
             error: function(request, status, error){
                 console.log("Error");
