@@ -6,7 +6,9 @@
 #result{
     font-size: 30px;
 }
-
+.bgd{
+    background-position:top center;
+}
 </style>
 <script type="text/javascript">
     let result = {{d|tojson}}
@@ -39,7 +41,7 @@
 
 <div class = "container">
     <div class="row m-5"></div>
-    <body background="../static/pic/background.png"></body>
+    <body class="bgd" background="../static/pic/background.png"></body>
     <h1 class = "text-center text-white display-3 m-5">Basketball Tactics</h1>
     <div id="result" class = "text-center text-white"> Your Score: <span id="res"></span> / 7</div>
 
