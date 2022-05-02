@@ -76,7 +76,7 @@ function update_player(){
 $(document).ready(function(){
     update_player();
     $('#q_num').empty();
-    $('#q_num').html(data.id);
+    $('#q_num').html(data.num);
     $('#action_name').empty();
     $('#action_name').html(data.action);
     $('#step_num').empty();

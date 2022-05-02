@@ -6,6 +6,7 @@ app = Flask(__name__)
 drag_data= {
     '4':{
         'id':'4',
+        'num':'4(1)',
         'action':'horn',
         'step':'1/2',
         'basketball': '1',
@@ -82,6 +83,7 @@ drag_data= {
     },
     '5':{
         'id':'5',
+        'num':'4(2)',
         'action':'horn',
         'step':'2/2',
         'basketball': '1',
@@ -151,6 +153,7 @@ drag_data= {
     },
     '6':{
         'id':'6',
+        'num':'5(1)',
         'action':'pistol',
         'step':'1/2',
         'basketball': '1',
@@ -226,6 +229,7 @@ drag_data= {
     },
     '7':{
         'id':'7',
+        'num':'5(2)',
         'action':'pistol',
         'step':'2/2',
         'basketball': '2',
